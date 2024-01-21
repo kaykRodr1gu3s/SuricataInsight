@@ -1,6 +1,11 @@
 import pandas as pd
 from collections import Counter
 from matplotlib import pyplot as plt
+from tools import directory_helper
+import os
+
+a = directory_helper.directory(os.listdir())
+print(a.dir_content)
 
 
 class data_visualization:
