@@ -53,7 +53,6 @@ class data_visualization:
         '''
 
         all_data = []
-        content_data = []
         for content in data:
             counter_Alert_Signature = Counter()
             ids = content['Alert Signature']
@@ -64,12 +63,13 @@ class data_visualization:
             Alert_Signature_quantity = []
 
             for value in counter_Alert_Signature:
+                content_data = []
                 Alert_Signature_name.append(value[0])
-                Alert_Signature_quantity.append(value[1])
+                Alert_Signature_quantity.append(int(value[1]))
 
                 content_data.append(Alert_Signature_name)
                 content_data.append(Alert_Signature_quantity)
-                all_data.append(content_data)
+            all_data.append(content_data)
  
         return all_data 
 
@@ -86,7 +86,11 @@ class data_visualization:
             plt.xlabel('Alert Names')
             plt.ylabel('Quantity')
             plt.xticks(rotation=45, ha='right')
-            plt.subplots_adjust(left=0.4)
+            if data[1][0] > 400:
+
+                plt.subplots_adjust(left=0.4)
+            else:
+                plt.subplots_adjust(left=0.1)
             plt.grid(True)
             plt.tight_layout()
             plt.savefig(csv_name[number].split('.')[0], bbox_inches='tight')
