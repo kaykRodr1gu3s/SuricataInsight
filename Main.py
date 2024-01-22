@@ -4,11 +4,11 @@ from matplotlib import pyplot as plt
 from tools import directory_helper
 import os
 
-a = directory_helper.directory(os.listdir())
-print(a.dir_content)
 
 
 class data_visualization:
+    def __init__(self) -> None:
+        self.cvs_file = directory_helper.directory(os.listdir())
 
     def open_csv(self) -> pd.DataFrame:
         '''
