@@ -6,7 +6,7 @@ import os
 
 
 
-class data_visualization:
+class data_analysis:
     def __init__(self):
         self.cvs_file = directory_helper.directory(os.listdir()).dir_content
 
@@ -98,6 +98,10 @@ class data_visualization:
             
 
     def main(self):
+        '''
+        This function, will agroup all the function and initing all of them
+        '''
+
         csv = self.open_csv()
         trans_data = self.transform_data(csv)
         counted_data = self.counter_function(trans_data)
@@ -105,6 +109,6 @@ class data_visualization:
 
 
 
-a = data_visualization()
+datas = data_analysis()
 
-a.main()
+datas.main()
