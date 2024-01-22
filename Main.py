@@ -76,26 +76,31 @@ class data_analysis:
 
     def plotting_datas(self, datas_for_plot : list):
         '''
-        This function will plot all datas that are available, and save with the name Suricata_Datas.png
+        This function will plot all datas that are available, and save with the name csv_name.png
         '''
+
         os.chdir('..\\Visualization')
         csv_name = self.cvs_file
+
         for number, data in enumerate(datas_for_plot):
+
             plt.barh(data[0],data[1])
             plt.title('Graphic of alert')
             plt.xlabel('Alert Names')
             plt.ylabel('Quantity')
-            plt.xticks(rotation=45, ha='right')
-            if data[1][0] > 400:
 
-                plt.subplots_adjust(left=0.4)
+            if data[1][0] > 400:
+                plt.subplots_adjust(left=0.5)
+                plt.xticks(rotation=45, ha='right')
+                plt.grid(True)
+
             else:
-                plt.subplots_adjust(left=0.1)
-            plt.grid(True)
-            plt.tight_layout()
-            plt.savefig(csv_name[number].split('.')[0], bbox_inches='tight')
+                plt.subplots_adjust(left=0.4)
+                plt.xticks(rotation=45, ha='right')
+
+            plt.savefig(csv_name[number].split('.')[0])
             plt.show()
-            
+
 
     def main(self):
         '''
