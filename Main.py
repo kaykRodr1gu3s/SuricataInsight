@@ -51,48 +51,56 @@ class data_visualization:
         '''
         This function will counter all the Alert Signature and will save in a list
         '''
-        counter_Alert_Signature = Counter()
-        
-        counter_Alert_Signature.update(data['Alert Signature'])
-        counter_Alert_Signature = counter_Alert_Signature.most_common()
 
         all_data = []
-        Alert_Signature_name = []
-        Alert_Signature_quantity = []
+        content_data = []
+        for content in data:
+            counter_Alert_Signature = Counter()
+            ids = content['Alert Signature']
+            counter_Alert_Signature.update(ids)
+            counter_Alert_Signature = counter_Alert_Signature.most_common()
 
-        for value in counter_Alert_Signature:
-            Alert_Signature_name.append(value[0])
-            Alert_Signature_quantity.append(value[1])
+            Alert_Signature_name = []
+            Alert_Signature_quantity = []
 
-        all_data.append(Alert_Signature_name)
-        all_data.append(Alert_Signature_quantity)
-        
+            for value in counter_Alert_Signature:
+                Alert_Signature_name.append(value[0])
+                Alert_Signature_quantity.append(value[1])
+
+                content_data.append(Alert_Signature_name)
+                content_data.append(Alert_Signature_quantity)
+                all_data.append(content_data)
+ 
         return all_data 
 
 
-    # def plotting_datas(self, datas_for_plot : list):
-    #     '''
-    #     This function will plot all datas that are available, and save with the name Suricata_Datas.png
-    #     '''
+    def plotting_datas(self, datas_for_plot : list):
+        '''
+        This function will plot all datas that are available, and save with the name Suricata_Datas.png
+        '''
+        os.chdir('..\\Visualization')
+        csv_name = self.cvs_file
+        for number, data in enumerate(datas_for_plot):
+            plt.barh(data[0],data[1])
+            plt.title('Graphic of alert')
+            plt.xlabel('Alert Names')
+            plt.ylabel('Quantity')
+            plt.xticks(rotation=45, ha='right')
+            plt.subplots_adjust(left=0.4)
+            plt.grid(True)
+            plt.tight_layout()
+            plt.savefig(csv_name[number].split('.')[0], bbox_inches='tight')
+            plt.show()
+            
 
-    #     plt.barh(datas_for_plot[0],datas_for_plot[1])
-    #     plt.title('Graphic of alert')
-    #     plt.xlabel('Alert Names')
-    #     plt.ylabel('Quantity')
-    #     plt.xticks(rotation=45, ha='right')
-    #     plt.subplots_adjust(left=0.4)
-    #     plt.grid(True)
-    #     plt.tight_layout()
-    #     plt.savefig('Graphic.png', bbox_inches='tight')
-    #     plt.show()
-        
-    # def main(self):
-    #     csv = self.open_csv()
-    #     trans_data = self.transform_data(csv)
-    #     counted_data = self.counter_function(trans_data)
-    #     self.plotting_datas(counted_data)
+    def main(self):
+        csv = self.open_csv()
+        trans_data = self.transform_data(csv)
+        counted_data = self.counter_function(trans_data)
+        self.plotting_datas(counted_data)
 
 
 
 a = data_visualization()
-a.transform_data(a.open_csv())
+
+a.main()
