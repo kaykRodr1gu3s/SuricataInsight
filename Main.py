@@ -2,8 +2,6 @@ import pandas as pd
 from collections import Counter
 from tools import plot
 from tools import directory_helper
-import os
-
 
 
 class data_analysis:
