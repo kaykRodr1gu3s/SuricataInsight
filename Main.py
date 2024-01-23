@@ -1,6 +1,6 @@
 import pandas as pd
 from collections import Counter
-from matplotlib import pyplot as plt
+from tools import plot
 from tools import directory_helper
 import os
 
@@ -8,7 +8,7 @@ import os
 
 class data_analysis:
     def __init__(self):
-        self.cvs_file = directory_helper.directory(os.listdir()).dir_content
+        self.cvs_file = directory_helper.directory().dir_content
 
     def open_csv(self) -> pd.DataFrame:
         '''
@@ -70,50 +70,20 @@ class data_analysis:
                 content_data.append(Alert_Signature_name)
                 content_data.append(Alert_Signature_quantity)
             all_data.append(content_data)
- 
         return all_data 
-
-
-    def plotting_datas(self, datas_for_plot : list):
-        '''
-        This function will plot all datas that are available, and save with the name csv_name.png
-        '''
-
-        os.chdir('..\\Visualization')
-        csv_name = self.cvs_file
-
-        for number, data in enumerate(datas_for_plot):
-
-            plt.barh(data[0],data[1])
-            plt.title('Graphic of alert')
-            plt.xlabel('Alert Names')
-            plt.ylabel('Quantity')
-
-            if data[1][0] > 400:
-                plt.subplots_adjust(left=0.5)
-                plt.xticks(rotation=45, ha='right')
-                plt.grid(True)
-
-            else:
-                plt.subplots_adjust(left=0.4)
-                plt.xticks(rotation=45, ha='right')
-
-            plt.savefig(csv_name[number].split('.')[0])
-            plt.show()
-
 
     def main(self):
         '''
         This function, will agroup all the function and initing all of them
         '''
-
+        plotting = plot.plotting()
+        
+        
         csv = self.open_csv()
         trans_data = self.transform_data(csv)
         counted_data = self.counter_function(trans_data)
-        self.plotting_datas(counted_data)
-
-
+        
+        plotting.plotting_datas(counted_data, self.cvs_file)
 
 datas = data_analysis()
-
 datas.main()

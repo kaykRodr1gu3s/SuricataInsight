@@ -1,3 +1,5 @@
+import os 
+
 import os
 
 class directory: 
@@ -8,8 +10,9 @@ class directory:
     '''
 
     os.chdir('csv_file')
-    def __init__(self, dir_content) -> None:
-        self.dir_content = dir_content
+    def __init__(self):
+        self.dir_content = os.listdir()
 
 
+ 
     
