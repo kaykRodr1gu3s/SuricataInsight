@@ -1,6 +1,6 @@
 import os
 from matplotlib import pyplot as plt
-from tools import directory_helper
+
 
 class plotting:
 
@@ -9,7 +9,7 @@ class plotting:
         This function will plot all datas that are available, and save with the name csv_name.png
         '''
 
-        os.chdir('..\\Visualization')
+        os.chdir('..//Visualization')
 
         for number, data in enumerate(datas_for_plot):
             plt.barh(data[0],data[1])
@@ -17,14 +17,13 @@ class plotting:
             plt.xlabel('Alert Names')
             plt.ylabel('Quantity')
 
-            if data[1][0] > 400:
+            if data[1][0] > 300:
                 plt.subplots_adjust(left=0.5)
                 plt.xticks(rotation=45, ha='right')
                 plt.grid(True)
 
             else:
-                plt.subplots_adjust(left=0.4)
-                plt.xticks(rotation=45, ha='right')
+                plt.subplots_adjust(left=0.6)
 
             plt.savefig(csv_name[number].split('.')[0])
             plt.show()
