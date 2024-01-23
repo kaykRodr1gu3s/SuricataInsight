@@ -1,25 +1,28 @@
 # SuricataInsight
 
-This project treat a csv file to visualization with python
+This is a data analisys and data visualization project, this project treat a csv file to visualization with python.
 
 # Index
-
++ [Requirements](#requirements)
 + [Instalation](#instalation)
++ [Configuration] (#configuration)
 
 
 
 
-
-## Instalation
+## Requirements
 
 First of all you need to install some tool and python libraries.
 
 ## Tool
-+ Suricata
++ [Suricata](https://suricata.io/)
 
 ## Python libraries
-```python
-pip install pandas
-pip install matplotlib
++ ```python
+   Pandas
+   matplotlib
+  ```
 
-```
+
+## Instalation
+
