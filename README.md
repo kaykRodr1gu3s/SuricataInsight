@@ -12,17 +12,24 @@ This is a data analisys and data visualization project, this project treat a csv
 
 ## Requirements
 
-First of all you need to install some tool and python libraries.
+First of all you need to install some tools and python libraries.
 
-## Tool
+## Tools
 + [Suricata](https://suricata.io/)
++ [jq](https://jqlang.github.io/jq/)
 
 ## Python libraries
-+ ```python
-   Pandas
-   matplotlib
-  ```
++ Pandas
++ matplotlib
 
 
 ## Instalation
+
+## Suricata
+For install suricata and jq, execute this code on Linux terminal
+```bash
+   sudo apt-get update
+   sudo apt-get install jq
+   sudo apt-get install suricata
+```
 
