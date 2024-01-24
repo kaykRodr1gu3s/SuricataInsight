@@ -28,9 +28,9 @@ First of all you need to install some tools and python libraries.
 ### Suricata
 For install suricata and jq, execute this code on Linux terminal
 ```bash
-   sudo apt-get update
-   sudo apt-get install jq
-   sudo apt-get install suricata
+sudo apt-get update
+sudo apt-get install jq
+sudo apt-get install suricata
 ```
 ### Python libraries
 
@@ -51,7 +51,7 @@ mkdir suricata
 
 #### Suricata upgrade
  ```bash
-   sudo apt-get upgrade suricata
+sudo apt-get upgrade suricata
 ```
 when execute this code, all your rules was upgrade, your rules file is located on /var/lib/suricata/rules
 
