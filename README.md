@@ -76,10 +76,13 @@ In this code, I left 2 pcaps as example, they are: [2022-03-14-Qakbot-with-Cobal
 Now that we downloaded and created all that we need, let's execute the suricata.
 
 ```bash
-suricata -r 2022-03-14-Qakbot-with-Cobalt-Strike-and-VNC-module
+suricata -r 2022-03-14-Qakbot-with-Cobalt-Strike-and-VNC-module.pcap  -S suricata.rules -v -l .
 
 ```
 
+```
+aaaaaaaa
+```
 
 
 
