@@ -62,7 +62,7 @@ We will copy the suricata.rules to our directory that was created.
 ```bash
 cd /var/lib/suricata/rules
 
-sudo cp suricata.rules ~/Documents/suricata
+cp suricata.rules ~/Documents/suricata
 ```
 
 
