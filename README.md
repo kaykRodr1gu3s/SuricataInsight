@@ -60,10 +60,26 @@ when execute this code, all your rules was upgrade, your rules file is located o
 We will copy the suricata.rules to our directory that was created.
 
 ```bash
-sudo -S
 cd /var/lib/suricata/rules
 
-cp suricata.rules ~Documents/suricata
+sudo cp suricata.rules ~/Documents/suricata
 ```
+
+
+
+
+## Execution
+
+In this code, I left 2 pcaps as example, they are: [2022-03-14-Qakbot-with-Cobalt-Strike-and-VNC-module](https://www.malware-traffic-analysis.net/2022/03/16/index.html) and [2023-11-20-DarkGate-infection-traffic.pcap](https://www.malware-traffic-analysis.net/2023/11/20/index.html). All these pcap are avaliable on [malware-traffic-analysis](https://www.malware-traffic-analysis.net). You can use any pcap, might be your or any that you have downloaded.
+
+### executing suricata
+
+
+
+
+
+
+
+
 
 
