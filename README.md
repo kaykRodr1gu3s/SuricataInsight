@@ -73,10 +73,12 @@ sudo cp suricata.rules ~/Documents/suricata
 In this code, I left 2 pcaps as example, they are: [2022-03-14-Qakbot-with-Cobalt-Strike-and-VNC-module](https://www.malware-traffic-analysis.net/2022/03/16/index.html) and [2023-11-20-DarkGate-infection-traffic.pcap](https://www.malware-traffic-analysis.net/2023/11/20/index.html). All these pcap are avaliable on [malware-traffic-analysis](https://www.malware-traffic-analysis.net). You can use any pcap, might be your or any that you have downloaded.
 
 ### executing suricata
+Now that we downloaded and created all that we need, let's execute the suricata.
 
+```bash
+suricata -r 2022-03-14-Qakbot-with-Cobalt-Strike-and-VNC-module
 
-
-
+```
 
 
 
