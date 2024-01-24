@@ -81,7 +81,7 @@ suricata -r 2022-03-14-Qakbot-with-Cobalt-Strike-and-VNC-module.pcap  -S suricat
 ```
 
 ```
-aaaaaaaa
+
 ```
 
 
