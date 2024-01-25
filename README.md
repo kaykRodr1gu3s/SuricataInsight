@@ -26,18 +26,6 @@ First of all you need to install some tools and python libraries.
 
 ## Instalation
 
-    Fork the repository.
-    Create a branch for your contribution: git checkout -b feature-nova.
-    Make the desired changes and commit: git commit -m "Add new functionality".
-    Push to your branch: git push origin new-feature.
-    Open a pull request.
-
-Contact
-
-    Linkedin: Kayk Rodrigues
-    Telegram: Kayk Rodrigues
-
-
 ### Suricata
 For install suricata and jq, execute this code on Linux terminal
 ```bash
