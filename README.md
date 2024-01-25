@@ -1,6 +1,12 @@
 # SuricataInsight
 
-This is a data analisys and data visualization project, this project treat a csv file to visualization with python.
+## Project Overview:
+
+Name: SuricataInsight
+
+Type: Data analysis and data visualization project
+
+Purpose: Treat a CSV file for visualization using Python with Suricata and jq.
 
 # Index
 + [Requirements](#requirements)
