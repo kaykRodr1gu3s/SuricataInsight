@@ -6,9 +6,10 @@ This is a data analisys and data visualization project, this project treat a csv
 + [Requirements](#requirements)
 + [Instalation](#instalation)
 + [Configuration](#configuration)
-
-
-
++ [Suricata execution](#suricata-execution)
++ [Python execution](#python-execution)
++ [How to contribute](#how-to-contribute)
++ [Contact](#contact)
 
 ## Requirements
 
@@ -24,6 +25,18 @@ First of all you need to install some tools and python libraries.
 
 
 ## Instalation
+
+    Fork the repository.
+    Create a branch for your contribution: git checkout -b feature-nova.
+    Make the desired changes and commit: git commit -m "Add new functionality".
+    Push to your branch: git push origin new-feature.
+    Open a pull request.
+
+Contact
+
+    Linkedin: Kayk Rodrigues
+    Telegram: Kayk Rodrigues
+
 
 ### Suricata
 For install suricata and jq, execute this code on Linux terminal
@@ -68,7 +81,7 @@ cp suricata.rules ~/Documents/suricata
 
 
 
-## Execution
+## Suricata execution
 
 In this code, I left 2 pcaps as [example](https://github.com/kaykRodr1gu3s/SuricataInsight/tree/main/csv_file), they are: [2022-03-14-Qakbot-with-Cobalt-Strike-and-VNC-module](https://www.malware-traffic-analysis.net/2022/03/16/index.html) and [2023-11-20-DarkGate-infection-traffic.pcap](https://www.malware-traffic-analysis.net/2023/11/20/index.html). All these pcap are avaliable on [malware-traffic-analysis](https://www.malware-traffic-analysis.net). You can use any pcap, might be your or any that you have downloaded.
 
@@ -79,6 +92,41 @@ Now that we downloaded and created all that we need, let's execute the suricata.
 suricata -r 2022-03-14-Qakbot-with-Cobalt-Strike-and-VNC-module.pcap  -S suricata.rules -v -l .
 
 ```
-### Parsing
+### Jq parser
 
-After that you [execute the suricata](#executing-suricata)
+After that you [execute the suricata](#executing-suricata) will generate some files, the file that we will use, will be the eve.json. The eve.json is a json file that contanis all the packet in the pcap file saved as json. We will parse this json usin the jq tool, colleting all the alerts and saving this alerts in csv.
+
+
+For parse the json, use this code:
+
+
+```bash
+jq -r 'select(.event_type == "alert") | [.timestamp, .src_ip, .src_port, .dest_ip, .dest_port, .event_type, .alert.severity, .alert.signature] | @csv' eve.json | sort -d > ~/Documentos/Suricata_rules/pcap_content.csv
+
+```
+
+
+## Python execution
+
+Now that all the datas is prepared for analysis , just need to execute the [python code](https://github.com/kaykRodr1gu3s/SuricataInsight/blob/main/Main.py).
+
+The code will import all the [libraries](#python-libraries) and will import some code that are saved on [tools directory](https://github.com/kaykRodr1gu3s/SuricataInsight/tree/main/tools).The tools is the code that are used for change the [current directory](https://github.com/kaykRodr1gu3s/SuricataInsight/blob/main/tools/directory_helper.py) and for [plot all datas](https://github.com/kaykRodr1gu3s/SuricataInsight/blob/main/tools/plot.py) with matplotlib.
+
+When the code finished, will open some window on your computer, it's all data that was plot, just need to close the window for the outhers plots be completed. All the plots is saved on [visualization](https://github.com/kaykRodr1gu3s/SuricataInsight/blob/main/tools/plot.py).
+
+
+
+## how to contribute
+ 1. Fork the repository.
+ 2. Create a branch for your contribution: `git checkout -b feature-nova`.
+ 3. Make the desired changes and commit: `git commit -m "Add new functionality"`.
+ 4. Push to your branch: `git push origin new-feature`.
+ 5. Open a pull request.
+
+
+
+
+## Contact
+
+- Linkedin: [Kayk Rodrigues](https://www.linkedin.com/in/kayk-rodrigues-504a03273)
+- Telegram: [Kayk Rodrigues](https://t.me/kaykRodrigues)
