@@ -24,6 +24,7 @@ First of all you need to install some tools and python libraries.
 ### Tools
 + [Suricata](https://suricata.io/)
 + [jq](https://jqlang.github.io/jq/)
++ [Poetry](https://python-poetry.org/)
 
 ## Python libraries
 + Pandas
@@ -31,6 +32,14 @@ First of all you need to install some tools and python libraries.
 
 
 ## Instalation
+
+### Poetry
+For install the Poetrym use the command bellow: 
+```bash
+curl -sSL https://install.python-poetry.org | python3 -
+
+```
+
 
 ### Suricata
 For install suricata and jq, execute this code on Linux terminal
@@ -41,8 +50,9 @@ sudo apt-get install suricata
 ```
 ### Python libraries
 
+For install the python libraries, you need to be in the same directory that the files: README.md, poetry.lock and pyproject.toml. After you are in the directory, use the command bellow:
 ```python3
-pip install -r requirements.txt
+poetry install
 ```
 
 
