@@ -8,8 +8,8 @@ class plotting:
         '''
         This function will plot all datas that are available, and save with the name csv_name.png
         '''
-
         os.chdir('..//Visualization')
+
 
         for number, data in enumerate(datas_for_plot):
             plt.barh(data[0],data[1])

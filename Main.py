@@ -3,7 +3,6 @@ from collections import Counter
 from tools import plot
 from tools import directory_helper
 
-
 class data_analysis:
     def __init__(self):
         self.cvs_file = directory_helper.directory().dir_content
@@ -73,14 +72,12 @@ class data_analysis:
     def main(self):
         '''
         This function, will agroup all the function and initing all of them
-        '''
-        plotting = plot.plotting()
-        
-        
+        '''  
         csv = self.open_csv()
         trans_data = self.transform_data(csv)
         counted_data = self.counter_function(trans_data)
-        
+        plotting = plot.plotting()
+
         plotting.plotting_datas(counted_data, self.cvs_file)
 
 datas = data_analysis()
