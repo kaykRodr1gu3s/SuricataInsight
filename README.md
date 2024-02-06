@@ -64,6 +64,8 @@ For the configuration, you only need create a directory and upgrade the suricata
 ```
 cd Documents
 mkdir suricata
+cd suricata
+mkdir csv_files
 ```
 
 #### Suricata upgrade
