@@ -68,7 +68,7 @@ mkdir suricata
 
 #### Suricata upgrade
  ```bash
-sudo apt-get upgrade suricata
+sudo suricata-update
 ```
 when execute this code, all your rules was upgrade, your rules file is located on /var/lib/suricata/rules
 
