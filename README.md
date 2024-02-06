@@ -107,7 +107,7 @@ For parse the json, use this code:
 
 
 ```bash
-jq -r 'select(.event_type == "alert") | [.timestamp, .src_ip, .src_port, .dest_ip, .dest_port, .event_type, .alert.severity, .alert.signature] | @csv' eve.json | sort -d > ~/Documentos/Suricata_rules/pcap_content.csv
+jq -r 'select(.event_type == "alert") | [.timestamp, .src_ip, .src_port, .dest_ip, .dest_port, .event_type, .alert.severity, .alert.signature] | @csv' eve.json | sort -d > ~/Documentos/suricata/pcap_content/pcap_content.csv
 
 ```
 
