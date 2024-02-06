@@ -59,7 +59,7 @@ poetry install
 ## Configuration
 For the configuration, you only need create a directory and upgrade the suricata. For upgrade the suricata is very simple, you just need to upgrade the rules and move the suricata.rules, for a directory created . Moving this suricata.rules, will be easier to execute and found this file
 
-#### making directory
+#### Creating directory
 
 ```
 cd Documents
