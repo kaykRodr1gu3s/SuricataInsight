@@ -43,7 +43,7 @@ class data_analysis:
 
             for csv_name in self.cvs_file:
                 directory_helper.directory.new_csv_folder()
-                df.to_csv(csv_name + ".csv")
+                df.to_csv(csv_name)
             
             df_data.append(df)
 
