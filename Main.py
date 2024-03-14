@@ -3,6 +3,8 @@ from collections import Counter
 from tools import plot
 from tools import directory_helper
 
+
+
 class data_analysis:
     def __init__(self):
         self.cvs_file = directory_helper.directory().dir_content
@@ -29,18 +31,23 @@ class data_analysis:
 
             df.rename(columns={
                 df_columns_name[0]: 'Time', df_columns_name[1]: 'IP Source', df_columns_name[2]: 'Port Source',
-                                df_columns_name[3]: 'Sorce Port', df_columns_name[3]: 'IP Destination',df_columns_name[4]: 'Destination Port', 
+                                df_columns_name[3]: 'Source Port', df_columns_name[3]: 'IP Destination',df_columns_name[4]: 'Destination Port', 
                                 df_columns_name[5] :'Event Type', df_columns_name[6] : 'Severity', df_columns_name[7]: 'Alert Signature'
                                 }, inplace=True)
-
             df.loc[-1] = df_columns_name
             df.index = df.index + 1
             df = df.sort_index()
 
             df['Time'] = df['Time'].apply(lambda time: time.split('.')[0])
             df['Time'] = pd.to_datetime(df['Time'], format='%Y-%m-%dT%H:%M:%S')
+
+            for csv_name in self.cvs_file:
+                directory_helper.directory.new_csv_folder()
+                df.to_csv(csv_name + ".csv")
+            
             df_data.append(df)
 
+            
         return df_data
 
 
