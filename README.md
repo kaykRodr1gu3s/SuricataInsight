@@ -118,7 +118,7 @@ Now that all the datas is prepared for analysis , just need to execute the [pyth
 
 The code will import all the [libraries](#python-libraries) and will import some code that are saved on [tools directory](https://github.com/kaykRodr1gu3s/SuricataInsight/tree/main/tools).The tools is the code that are used for change the [current directory](https://github.com/kaykRodr1gu3s/SuricataInsight/blob/main/tools/directory_helper.py) and for [plot all datas](https://github.com/kaykRodr1gu3s/SuricataInsight/blob/main/tools/plot.py) with matplotlib.
 
-When the code finished, will open some window on your computer, it's all data that was plot, just need to close the window for the outhers plots be completed. All the plots is saved on [visualization](https://github.com/kaykRodr1gu3s/SuricataInsight/blob/main/tools/plot.py).
+When the code finished, news csv files will be created and saved on [new_csv_file](https://github.com/kaykRodr1gu3s/SuricataInsight/tree/main/new_csv_file), and will open some window on your computer, it's all data that was plot, just need to close the window for the outhers plots be completed. All the plots is saved on [visualization](https://github.com/kaykRodr1gu3s/SuricataInsight/blob/main/tools/plot.py).
 
 
 
